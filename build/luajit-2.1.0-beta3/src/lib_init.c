@@ -26,6 +26,9 @@ static const luaL_Reg lj_lib_load[] = {
   { LUA_DBLIBNAME,	luaopen_debug },
   { LUA_BITLIBNAME,	luaopen_bit },
   { LUA_JITLIBNAME,	luaopen_jit },
+  { LUA_JITLIBNAME,	luaopen_jit },
+  /* third-party libraries */
+  { LUA_CJSONNAME,	luaopen_cjson },
   { NULL,		NULL }
 };
 

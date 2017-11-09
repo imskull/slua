@@ -108,6 +108,10 @@ namespace SLua
 #else
         const string LUADLL = "slua";
 #endif
+        //cjson
+        [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)]
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        public static extern int luaopen_cjson(IntPtr luaState);
 
         [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)]
         public static extern void luaS_openextlibs(IntPtr L);

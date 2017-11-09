@@ -36,6 +36,12 @@ LUALIB_API int luaopen_ffi(lua_State *L);
 
 LUALIB_API void luaL_openlibs(lua_State *L);
 
+/* third-party libraries */
+#define LUA_CJSONNAME	"cjson"
+
+LUALIB_API int luaopen_cjson(lua_State *l);
+LUALIB_API int luaopen_cjson_safe(lua_State *l);
+
 #ifndef lua_assert
 #define lua_assert(x)	((void)0)
 #endif

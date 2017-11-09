@@ -12,8 +12,9 @@ namespace SLua{
 		static Dictionary<string, LuaCSFunction> DLLRegFuncs = new Dictionary<string, LuaCSFunction>();
 		
 		static Lua3rdDLL(){
-			// LuaSocketDLL.Reg(DLLRegFuncs);
-		}
+            // LuaSocketDLL.Reg(DLLRegFuncs);
+            CjsonLib.Reg(DLLRegFuncs);
+        }
 		
 		public static void open(IntPtr L){
 			var typenames = Lua3rdMeta.Instance.typesWithAttribtues;

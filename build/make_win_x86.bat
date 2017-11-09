@@ -10,6 +10,12 @@ set USE_LUA_PATH=%LUAJIT_PATH%
 :: if "%USE_STANDARD_LUA%"=="YES" (set USE_LUA_PATH=%STANDARD_LUA_PATH%)
 
 :: get visual studio tools path
+:check2015-update2
+if exist "%VS140COMNTOOLS%" (
+    set VS_TOOL_VER=vs140
+    set VCVARS="%VS140COMNTOOLS%..\..\VC\bin\"
+    goto build
+)
 :check2015
 if exist "%VS130COMNTOOLS%" (
     set VS_TOOL_VER=vs130
@@ -29,7 +35,7 @@ if exist "%VS110COMNTOOLS%" (
     goto build
 )
 :check2010
-if exist "%VS100COMNTOOLS%" (
+if exist "%VS100COMNTOOLS%" (   
     set VS_TOOL_VER=vs100
     set VCVARS="%VS100COMNTOOLS%..\..\VC\bin\"
     goto build
@@ -50,6 +56,8 @@ set ENV64="%VCVARS%amd64\vcvars64.bat"
 
 copy /Y slua.c "%USE_LUA_PATH%\src\"
 copy /Y luasocket-mini\*.* "%USE_LUA_PATH%\src\"
+copy /Y lua-cjson-2.1.0\*.h  "%USE_LUA_PATH%\src\"
+copy /Y lua-cjson-2.1.0\*.c  "%USE_LUA_PATH%\src\"
 
 call "%ENV32%"
 echo Swtich to x86 build env(%VS_TOOL_VER%)
