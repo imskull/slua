@@ -36,14 +36,14 @@ public class Main : MonoBehaviour
 
 	void complete()
 	{
-		l.start("main");
-		object o = LuaSvr.mainState.getFunction("foo").call(1, 2, 3);
-		object[] array = (object[])o;
-		for (int n = 0; n < array.Length; n++)
-			Debug.Log(array[n]);
+		l.start("luaide_main");
+		//object o = LuaSvr.mainState.getFunction("foo").call(1, 2, 3);
+		//object[] array = (object[])o;
+		//for (int n = 0; n < array.Length; n++)
+		//	Debug.Log(array[n]);
 
-		string s = (string)LuaSvr.mainState.getFunction("str").call(new object[0]);
-		Debug.Log(s);
+		//string s = (string)LuaSvr.mainState.getFunction("str").call(new object[0]);
+		//Debug.Log(s);
 	}
 
 	void OnGUI()

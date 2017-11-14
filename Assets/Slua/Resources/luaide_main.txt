@@ -1,0 +1,12 @@
+import "UnityEngine"
+
+local breakSocketHandle,debugXpCall = require("LuaDebugjit")("localhost",7003)
+LuaTimer.Add(0,1000,function(id)
+    breakSocketHandle()
+end)
+
+-- works
+-- require("luaide_test/breakpoint_test")
+
+-- not working!
+require("luaide_test.breakpoint_test")
