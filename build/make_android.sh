@@ -2,13 +2,13 @@
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 
 # copy slua copy to luajit folder
-cp slua.c luasocket-mini/* luajit-2.1.0-beta3/src/
+cp slua.c luasocket-mini/* lua-cjson-2.1.0/*.h lua-cjson-2.1.0/*.c luajit-2.1.0-beta3/src/
 cd luajit-2.1.0-beta3
 SRCDIR=$(pwd)
 DIR=$(pwd)
 
-${NDKPATH?"Need to set NDKPATH"}
-
+#${NDKPATH?"Need to set NDKPATH"}
+NDKPATH=/Users/jjws/Desktop/slua/ndk/android-ndk-r14b
 NDK=$NDKPATH
 NDKABI=8
 NDKVER=$NDK/toolchains/arm-linux-androideabi-4.9
